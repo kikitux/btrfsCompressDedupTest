@@ -1,0 +1,5 @@
+.bundle/
+.vagrant/
+disk*.vdi
+polipo/
+proxy.env
