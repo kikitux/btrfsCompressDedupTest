@@ -17,28 +17,36 @@ sdf Compression lzo
 ## copying 700MB random file
 
 ```bash
-# to bare, no compression
-root@butter:/dev/shm# time cp randon.file.img /mnt/sdc
+root@butter:/vagrant/scripts# dd if=/dev/urandom of=/dev/shm/random.file bs=1M count=2
+2+0 records in
+2+0 records out
+2097152 bytes (2.1 MB) copied, 0.180227 s, 11.6 MB/s
+root@butter:/vagrant/scripts# time dd if=/dev/shm/random.file of=/mnt/sdc/random.file oflag=direct
+4096+0 records in
+4096+0 records out
+2097152 bytes (2.1 MB) copied, 1.50688 s, 1.4 MB/s
 
-real    0m1.875s
-user    0m0.017s
-sys     0m0.445s
+real    0m1.509s
+user    0m0.005s
+sys     0m0.278s
+root@butter:/vagrant/scripts# time dd if=/dev/shm/random.file of=/mnt/sde/random.file oflag=direct
+4096+0 records in
+4096+0 records out
+2097152 bytes (2.1 MB) copied, 1.93564 s, 1.1 MB/s
 
-# to zlib
-root@butter:/dev/shm# time cp randon.file.img /mnt/sde
-
-real    0m3.213s
+real    0m1.940s
 user    0m0.000s
-sys     0m0.444s
+sys     0m0.337s
+root@butter:/vagrant/scripts# time dd if=/dev/shm/random.file of=/mnt/sdf/random.file oflag=direct
+4096+0 records in
+4096+0 records out
+2097152 bytes (2.1 MB) copied, 2.02141 s, 1.0 MB/s
 
-# to lzo
-root@butter:/dev/shm# time cp randon.file.img /mnt/sdf
+real    0m2.026s
+user    0m0.005s
+sys     0m0.316s
+root@butter:/vagrant/scripts#
 
-real    0m1.221s
-user    0m0.000s
-sys     0m0.420s
-
-root@butter:/dev/shm#
 
 ```
 
