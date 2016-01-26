@@ -1,6 +1,34 @@
 # btrfsCompressDedupTest
 btrfsCompressDedupTest
 
+# copying 700MB random file
+
+```bash
+# to bare, no compression
+root@butter:/dev/shm# time cp randon.file.img /mnt/sdc
+
+real    0m1.875s
+user    0m0.017s
+sys     0m0.445s
+
+# to zlib
+root@butter:/dev/shm# time cp randon.file.img /mnt/sde
+
+real    0m3.213s
+user    0m0.000s
+sys     0m0.444s
+
+# to lzo
+root@butter:/dev/shm# time cp randon.file.img /mnt/sdf
+
+real    0m1.221s
+user    0m0.000s
+sys     0m0.420s
+
+root@butter:/dev/shm#
+
+```
+
 # some results
 
 sdb Source
