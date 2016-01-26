@@ -4,9 +4,13 @@ btrfsCompressDedupTest
 # Some tests
 
 sdb Source
+
 sdc Bare, no dedup, no compression
+
 sdd Dedup
+
 sde Compression zlib
+
 sdf Compression lzo
 
 
