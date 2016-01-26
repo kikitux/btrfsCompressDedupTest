@@ -14,7 +14,7 @@ sde Compression zlib
 sdf Compression lzo
 
 
-## copying 700MB random file
+## copying 2MB random file
 
 ```bash
 root@butter:/vagrant/scripts# dd if=/dev/urandom of=/dev/shm/random.file bs=1M count=2
