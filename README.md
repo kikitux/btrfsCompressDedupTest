@@ -47,6 +47,13 @@ user    0m0.005s
 sys     0m0.316s
 root@butter:/vagrant/scripts#
 
+root@butter:/vagrant/scripts# md5sum /dev/shm/random.file /mnt/sdc/random.file /mnt/sde/random.file /mnt/sdf/random.file
+9b2bd8c6d4b529a7f197e5669255ecef  /dev/shm/random.file
+9b2bd8c6d4b529a7f197e5669255ecef  /mnt/sdc/random.file
+9b2bd8c6d4b529a7f197e5669255ecef  /mnt/sde/random.file
+9b2bd8c6d4b529a7f197e5669255ecef  /mnt/sdf/random.file
+root@butter:/vagrant/scripts#
+
 
 ```
 
