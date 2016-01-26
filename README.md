@@ -1,7 +1,16 @@
 # btrfsCompressDedupTest
 btrfsCompressDedupTest
 
-# copying 700MB random file
+# Some tests
+
+sdb Source
+sdc Bare, no dedup, no compression
+sdd Dedup
+sde Compression zlib
+sdf Compression lzo
+
+
+## copying 700MB random file
 
 ```bash
 # to bare, no compression
@@ -29,14 +38,9 @@ root@butter:/dev/shm#
 
 ```
 
-# some results
+## rsync of sample files. Source was /etc and /usr of ubuntu
 
-sdb Source
-sdc Bare, no dedup, no compression
-sdd Dedup
-sde Compression zlib
-sdf Compression lzo
-
+For dedup we did `cp /usr/bin /<destinationN>` 4 times.
 
 ```bash
 
@@ -58,7 +62,3 @@ Filesystem      Size  Used Avail Use% Mounted on
 
 root@butter:/vagrant/scripts#
 ```
-
-
-
-
